@@ -49,6 +49,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
 # Audio
 AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 BOARD_USES_ALSA_AUDIO := true
 
@@ -123,6 +124,7 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     init.te \
     init_shell.te \
+    kernel.te \
     keystore.te \
     mediaserver.te \
     mm-qcamerad.te \
@@ -132,9 +134,11 @@ BOARD_SEPOLICY_UNION += \
     property.te \
     rild.te \
     rmt_storage.te \
+    sensord.te \
     system_app.te \
     system_server.te \
     thermal-engine.te \
+    ueventd.te \
     vold.te
 
 # Vold
