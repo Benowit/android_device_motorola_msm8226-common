@@ -71,6 +71,7 @@ BOARD_HARDWARE_CLASS := $(VENDOR_PATH)/cmhw/
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 USE_OPENGL_RENDERER := true
 
 # FM
@@ -84,9 +85,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Memory
 MALLOC_IMPL := dlmalloc
-
-# Motorola
-TARGET_USES_MOTOROLA_LOG := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -109,34 +107,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-    $(VENDOR_PATH)/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    akmd8963.te \
-    atvc.te \
-    batt_health.te \
-    device.te \
-    file_contexts \
-    file.te \
-    init.te \
-    init_shell.te \
-    kernel.te \
-    keystore.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    platform_app.te \
-    property_contexts \
-    property.te \
-    rild.te \
-    rmt_storage.te \
-    sensord.te \
-    system_app.te \
-    system_server.te \
-    thermal-engine.te \
-    ueventd.te \
-    vold.te
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
