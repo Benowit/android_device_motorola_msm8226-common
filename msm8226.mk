@@ -150,6 +150,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
+# Radio
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
@@ -164,6 +168,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Thermal
 PRODUCT_COPY_FILES += \
